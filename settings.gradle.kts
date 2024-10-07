@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "playground"
 include(":app")
+include(":chapter03")
