@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你好世界! px 效果"
+        android:textSize="30px"/>
+
+    <TextView
+        android:id="@+id/tv_dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你好世界! dp 效果"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/tv_sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你好世界! sp 效果"
+        android:textSize="30sp"/>
+
+
+</LinearLayout>
