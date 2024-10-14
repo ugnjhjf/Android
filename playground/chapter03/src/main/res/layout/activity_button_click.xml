@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ButtonClickActivity">
+    
+    <Button
+        android:id="@+id/btn_click_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="指定单独的点击监听器"
+        android:textColor="#000000"
+        android:textSize="15sp"/>
+    
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:text="点击结果查看按钮结果"/>
+
+
+  </LinearLayout>

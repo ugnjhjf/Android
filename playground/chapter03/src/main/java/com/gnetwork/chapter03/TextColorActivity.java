@@ -15,6 +15,11 @@ public class TextColorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_view);
         TextView tv_code_system = findViewById(R.id.tv_code_system);
-        tv_code_system.setTextColor(Color.GREEN);
+        tv_code_system.setTextColor(Color.WHITE);
+        tv_code_system.setBackgroundColor(Color.BLACK);
+
+        TextView tv_code_background = findViewById(R.id.tv_code_background);
+        tv_code_background.setBackgroundColor(Color.GRAY);
+
     }
 }

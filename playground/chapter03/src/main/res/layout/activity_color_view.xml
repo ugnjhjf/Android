@@ -6,10 +6,17 @@
 
     <TextView
         android:id="@+id/tv_code_system"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RGB效果"
         android:textSize="30sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_code_background"
+        android:text="背景设置为灰色"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         />
 
 
