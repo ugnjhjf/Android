@@ -62,15 +62,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId())
         {
             case R.id.btn_clear:
+              clear();
+              break;
+
+            case R.id.btn_cancel:
                 firstNum = "";
-                operator = "";
                 secondNum = "";
+                operator = "";
                 result = "";
                 showText = "";
-                break;
-            case R.id.btn_cancel:
-                break;
+                refreshText(showText);
 
+
+                break;
 
             case R.id.btn_plus:
             case R.id.btn_subtract:
@@ -81,18 +85,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_equals:
+                double calculator_result = calculateFour();
+                refreshOperate(String.valueOf(calculator_result));
+                refreshText(showText + "=" + result);
                 break;
             case R.id.ib_sqrt:
+                double sqrt_result = Math.sqrt(Double.parseDouble(firstNum));
+                refreshOperate(String.valueOf(sqrt_result));
+                refreshText(showText + "√=" + result);
                 break;
             case R.id.btn_reciprocal:
+                double reciprocal_result = 1.0 / Double.parseDouble(firstNum);
+                refreshOperate(String.valueOf(reciprocal_result));
+                refreshText(showText + "/=" + reciprocal_result);
                 break;
 
             default:
+                if (result.length() > 0 && operator.equals("")){
+                    clear();
+                }
+
                 if (operator.equals("")) {
                     firstNum += inputText;
                 }else{
                     secondNum += inputText;
                 }
+
                 if (showText.equals("0") && !inputText.equals(".")){
                     showText = "";
                 }else {
@@ -100,7 +118,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
         }
-    };
+    }
+
+    private double calculateFour() {
+        switch (operator){
+            case "+":
+                return Double.parseDouble(firstNum) + Double.parseDouble(secondNum);
+            case "-":
+                return Double.parseDouble(firstNum) - Double.parseDouble(secondNum);
+            case "×":
+                    return Double.parseDouble(firstNum) * Double.parseDouble(secondNum);
+            default:
+                    return Double.parseDouble(firstNum) / Double.parseDouble(secondNum);
+        }
+    }
+
+    ;
+    private void clear(){
+        refreshText("");
+    }
+
+    private void refreshOperate(String new_result){
+        result = new_result;
+        firstNum = result;
+        secondNum = "";
+        operator = "";
+    }
+    //刷新文本显示
     private void refreshText(String text){
         showText = text;
         tv_result.setText(showText);
