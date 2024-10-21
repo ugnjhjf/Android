@@ -33,18 +33,22 @@ public class ButtonEnableActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
+        TextView tv_result = findViewById(R.id.tv_result);
         switch (v.getId()) {
             case R.id.btn_enable:
                 Button btn_test = findViewById(R.id.btn_test);
                 btn_test.setEnabled(true);
+                tv_result.setText("已启用~");
                 break;
             case R.id.btn_disable:
                 Button btn_test1 = findViewById(R.id.btn_test);
                 btn_test1.setEnabled(false);
+
+                tv_result.setText("已禁用！");
+
                 break;
             case R.id.btn_test:
-                TextView tv_result = findViewById(R.id.tv_result);
-                tv_result.setText("按钮被点击了");
+                tv_result.setText("按钮被点击了: "+System.currentTimeMillis());
                 break;
         }
     };
